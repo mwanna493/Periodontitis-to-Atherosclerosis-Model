@@ -6,7 +6,7 @@
 %   CRP-LDL link:        Blake & Ridker 2002
 
 dt    = 1;       % time step (days)
-t_end = 7300;    % total duration = 20 years
+t_end = 1825;    % total duration = 5 years
 klokmax = t_end / dt; % total number of time steps
 
 % Initial conditions

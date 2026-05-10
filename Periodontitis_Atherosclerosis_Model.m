@@ -3,10 +3,15 @@ clf       %and figures
 
 global dt t_end klokmax;
 global C A L M F P
+global B_mode B_healthy B_disease B_onset
+global lambda_C delta_C
+global k_AC delta_A
+global sigma_M delta_M k_MF
+global alpha_base alpha_ox LDL_plasma delta_L gamma_ML
+global k_MF delta_F
 global F_thresh k_stenosis
 
 init_params; 
-
 
 t_plot = zeros(1, klokmax);
 B_plot = zeros(1, klokmax);
@@ -21,7 +26,7 @@ P_plot = zeros(1, klokmax);
 for klok = 1:klokmax
     t = klok * dt;
  
-    B = B(t); %Oral disease input
+    B = B0(t); %Oral disease input
  
     dC = dCdt(t, C, B);
     dA = dAdt(t, A, C);
@@ -34,7 +39,6 @@ for klok = 1:klokmax
     L = L + dt * dL;
     M = M + dt * dM;
     F = F + dt * dF;
- 
 
     P = P + dt * max(0, F - F_thresh); %Plaque size
  
@@ -91,7 +95,6 @@ plot(t_years, M_plot)
 xlabel('Time (years)')
 ylabel('M(t)  [cells/mm^3]')
 title('Macrophages')
-grid on
  
 subplot(3,1,3)
 plot(t_years, F_plot)

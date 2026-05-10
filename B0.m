@@ -1,11 +1,11 @@
-function B = B(t)
-
-global B_mode B_healthy B_disease B_onset
+function B = B0(t)
 % B(t) represents disease severity over time. Modes:
 %   'chronic'   constant elevated load
 %   'step'      healthy -> diseased at t = params.B_onset (days)%
 
 % 0 = healthy, 1 = severe periodontitis
+
+global B_mode B_healthy B_disease B_onset
 
     switch B_mode
 

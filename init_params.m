@@ -15,9 +15,10 @@ A = 1.0;    % baseline CRP ~1 mg/L (healthy)
 L = 0.01;   % near-zero intimal oxLDL at t=0
 M = 0.01;   % near-zero intimal macrophages at t=0
 F = 0.0;    % no foam cells initially
+P = 0; 
 
 % B(t) input
-B_mode     = 'step';   % 'chronic' or 'step'
+B_mode = 'step';   % 'chronic' or 'step'
 B_healthy  = 0.05;     % low baseline (healthy gums)
 B_disease  = 1.0;      % normalised severe periodontitis load
 B_onset    = 365;      % disease begins at year 1 (days)
